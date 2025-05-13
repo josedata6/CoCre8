@@ -1,0 +1,409 @@
+[
+    {
+        "label": "sqlite3",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sqlite3",
+        "description": "sqlite3",
+        "detail": "sqlite3",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "models.base_model",
+        "description": "models.base_model",
+        "isExtraImport": true,
+        "detail": "models.base_model",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "models.base_model",
+        "description": "models.base_model",
+        "isExtraImport": true,
+        "detail": "models.base_model",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "models.base_model",
+        "description": "models.base_model",
+        "isExtraImport": true,
+        "detail": "models.base_model",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "models.base_model",
+        "description": "models.base_model",
+        "isExtraImport": true,
+        "detail": "models.base_model",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "models.base_model",
+        "description": "models.base_model",
+        "isExtraImport": true,
+        "detail": "models.base_model",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "models.base_model",
+        "description": "models.base_model",
+        "isExtraImport": true,
+        "detail": "models.base_model",
+        "documentation": {}
+    },
+    {
+        "label": "Project",
+        "importPath": "models.project",
+        "description": "models.project",
+        "isExtraImport": true,
+        "detail": "models.project",
+        "documentation": {}
+    },
+    {
+        "label": "Project",
+        "importPath": "models.project",
+        "description": "models.project",
+        "isExtraImport": true,
+        "detail": "models.project",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "models.user",
+        "description": "models.user",
+        "isExtraImport": true,
+        "detail": "models.user",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "models.user",
+        "description": "models.user",
+        "isExtraImport": true,
+        "detail": "models.user",
+        "documentation": {}
+    },
+    {
+        "label": "Skill",
+        "importPath": "models.skill",
+        "description": "models.skill",
+        "isExtraImport": true,
+        "detail": "models.skill",
+        "documentation": {}
+    },
+    {
+        "label": "ProjectSkill",
+        "importPath": "models.projectSkill",
+        "description": "models.projectSkill",
+        "isExtraImport": true,
+        "detail": "models.projectSkill",
+        "documentation": {}
+    },
+    {
+        "label": "Membership",
+        "importPath": "models.membership",
+        "description": "models.membership",
+        "isExtraImport": true,
+        "detail": "models.membership",
+        "documentation": {}
+    },
+    {
+        "label": "Membership",
+        "importPath": "models.membership",
+        "description": "models.membership",
+        "isExtraImport": true,
+        "detail": "models.membership",
+        "documentation": {}
+    },
+    {
+        "label": "Message",
+        "importPath": "models.message",
+        "description": "models.message",
+        "isExtraImport": true,
+        "detail": "models.message",
+        "documentation": {}
+    },
+    {
+        "label": "Message",
+        "importPath": "models.message",
+        "description": "models.message",
+        "isExtraImport": true,
+        "detail": "models.message",
+        "documentation": {}
+    },
+    {
+        "label": "initDb",
+        "importPath": "db_schema",
+        "description": "db_schema",
+        "isExtraImport": true,
+        "detail": "db_schema",
+        "documentation": {}
+    },
+    {
+        "label": "listUsersByKeyword",
+        "importPath": "functions",
+        "description": "functions",
+        "isExtraImport": true,
+        "detail": "functions",
+        "documentation": {}
+    },
+    {
+        "label": "listProjectsBySkill",
+        "importPath": "functions",
+        "description": "functions",
+        "isExtraImport": true,
+        "detail": "functions",
+        "documentation": {}
+    },
+    {
+        "label": "getAllProjectTitlesSorted",
+        "importPath": "functions",
+        "description": "functions",
+        "isExtraImport": true,
+        "detail": "functions",
+        "documentation": {}
+    },
+    {
+        "label": "getMessagesForProject",
+        "importPath": "functions",
+        "description": "functions",
+        "isExtraImport": true,
+        "detail": "functions",
+        "documentation": {}
+    },
+    {
+        "label": "countProjectsPerUser",
+        "importPath": "functions",
+        "description": "functions",
+        "isExtraImport": true,
+        "detail": "functions",
+        "documentation": {}
+    },
+    {
+        "label": "getTopContributors",
+        "importPath": "functions",
+        "description": "functions",
+        "isExtraImport": true,
+        "detail": "functions",
+        "documentation": {}
+    },
+    {
+        "label": "findProjectByTitle",
+        "importPath": "functions",
+        "description": "functions",
+        "isExtraImport": true,
+        "detail": "functions",
+        "documentation": {}
+    },
+    {
+        "label": "findProjectChain",
+        "importPath": "functions",
+        "description": "functions",
+        "isExtraImport": true,
+        "detail": "functions",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "datetime",
+        "description": "datetime",
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "kind": 6,
+        "importPath": "models.base_model",
+        "description": "models.base_model",
+        "peekOfCode": "class BaseModel:\n    def __init__(self, db_path=\"projectmatch.db\"):\n        self.db_path = db_path\n    def _run(self, query, params=(), fetch=False):\n        \"\"\"Executes a query with optional parameters. Set fetch=True to retrieve results.\"\"\"\n        with sqlite3.connect(self.db_path) as conn:\n            cur = conn.cursor()\n            cur.execute(query, params)\n            if fetch:\n                return cur.fetchall()",
+        "detail": "models.base_model",
+        "documentation": {}
+    },
+    {
+        "label": "Membership",
+        "kind": 6,
+        "importPath": "models.membership",
+        "description": "models.membership",
+        "peekOfCode": "class Membership(BaseModel):\n    def create(self, user_id, project_id, role, join_date):\n        \"\"\"Add a user to a project with a role and join date.\"\"\"\n        self._run(\n            \"INSERT INTO Membership (user_id, project_id, role, join_date) VALUES (?, ?, ?, ?)\",\n            (user_id, project_id, role, join_date)\n        )\n    def getById(self, user_id, project_id):\n        \"\"\"Retrieve a membership record by user and project ID.\"\"\"\n        rows = self._run(",
+        "detail": "models.membership",
+        "documentation": {}
+    },
+    {
+        "label": "Message",
+        "kind": 6,
+        "importPath": "models.message",
+        "description": "models.message",
+        "peekOfCode": "class Message(BaseModel):\n    def create(self, sender_id, project_id, content, sent_at):\n        \"\"\"Create a message tied to a project and sender.\"\"\"\n        self._run(\n            \"INSERT INTO Messages (sender_id, project_id, content, sent_at) VALUES (?, ?, ?, ?)\",\n            (sender_id, project_id, content, sent_at)\n        )\n    def getById(self, message_id):\n        \"\"\"Retrieve a message by its ID.\"\"\"\n        rows = self._run(",
+        "detail": "models.message",
+        "documentation": {}
+    },
+    {
+        "label": "Project",
+        "kind": 6,
+        "importPath": "models.project",
+        "description": "models.project",
+        "peekOfCode": "class Project(BaseModel):\n    def create(self, title, description, created_by):\n        \"\"\"Create a new project.\"\"\"\n        self._run(\n            \"INSERT INTO Projects (title, description, created_by) VALUES (?, ?, ?)\",\n            (title, description, created_by)\n        )\n    def getById(self, project_id):\n        \"\"\"Get project details by ID.\"\"\"\n        rows = self._run(\"SELECT * FROM Projects WHERE project_id = ?\", (project_id,), fetch=True)",
+        "detail": "models.project",
+        "documentation": {}
+    },
+    {
+        "label": "ProjectSkill",
+        "kind": 6,
+        "importPath": "models.projectSkill",
+        "description": "models.projectSkill",
+        "peekOfCode": "class ProjectSkill(BaseModel):\n    def create(self, project_id, skill_id):\n        \"\"\"Link a skill to a project.\"\"\"\n        self._run(\"INSERT INTO ProjectSkills (project_id, skill_id) VALUES (?, ?)\", (project_id, skill_id))\n    def getById(self, project_id, skill_id):\n        \"\"\"Retrieve a specific project-skill link.\"\"\"\n        rows = self._run(\n            \"SELECT * FROM ProjectSkills WHERE project_id = ? AND skill_id = ?\",\n            (project_id, skill_id),\n            fetch=True",
+        "detail": "models.projectSkill",
+        "documentation": {}
+    },
+    {
+        "label": "Skill",
+        "kind": 6,
+        "importPath": "models.skill",
+        "description": "models.skill",
+        "peekOfCode": "class Skill(BaseModel):\n    def create(self, skill_name):\n        \"\"\"Add a new skill to the Skills table.\"\"\"\n        self._run(\"INSERT INTO Skills (skill_name) VALUES (?)\", (skill_name,))\n    def getById(self, skill_id):\n        \"\"\"Retrieve a skill by its ID.\"\"\"\n        rows = self._run(\"SELECT * FROM Skills WHERE skill_id = ?\", (skill_id,), fetch=True)\n        return rows[0] if rows else None\n    def update(self, skill_id, skill_name):\n        \"\"\"Update the name of a skill.\"\"\"",
+        "detail": "models.skill",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "kind": 6,
+        "importPath": "models.user",
+        "description": "models.user",
+        "peekOfCode": "class User(BaseModel):\n    def create(self, name, email, bio):\n        \"\"\"Add a new user to the database.\"\"\"\n        self._run(\"INSERT INTO Users (name, email, bio) VALUES (?, ?, ?)\", (name, email, bio))\n    def getById(self, user_id):\n        \"\"\"Retrieve a user by ID.\"\"\"\n        rows = self._run(\"SELECT * FROM Users WHERE user_id = ?\", (user_id,), fetch=True)\n        return rows[0] if rows else None\n    def update(self, user_id, name=None, email=None, bio=None):\n        \"\"\"Update fields of a user by ID.\"\"\"",
+        "detail": "models.user",
+        "documentation": {}
+    },
+    {
+        "label": "initDb",
+        "kind": 2,
+        "importPath": "db_schema",
+        "description": "db_schema",
+        "peekOfCode": "def initDb(db_path=\"projectmatch.db\"):\n    \"\"\"Initializes the SQLite database using the TABLE_DEFS dictionary.\"\"\"\n    conn = sqlite3.connect(db_path)\n    cur = conn.cursor()\n    for table, fields in TABLE_DEFS.items():\n        columns = \",\\n    \".join([\n            f\"{col} {typ}\" for col, typ in fields.items() if not col.startswith(\"FOREIGN KEY\")\n        ])\n        fks = \",\\n    \".join([\n            f\"{col} {typ}\" for col, typ in fields.items() if col.startswith(\"FOREIGN KEY\")",
+        "detail": "db_schema",
+        "documentation": {}
+    },
+    {
+        "label": "TABLE_DEFS",
+        "kind": 5,
+        "importPath": "db_schema",
+        "description": "db_schema",
+        "peekOfCode": "TABLE_DEFS = {\n    \"Users\": {\n        \"user_id\": \"INTEGER PRIMARY KEY AUTOINCREMENT\",\n        \"name\": \"TEXT NOT NULL\",\n        \"email\": \"TEXT NOT NULL UNIQUE\",\n        \"bio\": \"TEXT\"\n    },\n    \"Projects\": {\n        \"project_id\": \"INTEGER PRIMARY KEY AUTOINCREMENT\",\n        \"title\": \"TEXT NOT NULL\",",
+        "detail": "db_schema",
+        "documentation": {}
+    },
+    {
+        "label": "findProjectChain",
+        "kind": 2,
+        "importPath": "functions",
+        "description": "functions",
+        "peekOfCode": "def findProjectChain(project_id, depth=0, visited=None):\n    \"\"\"Recursive mock to simulate a dependency walk (e.g., linked project threads).\"\"\"\n    if visited is None:\n        visited = set()\n    if project_id in visited or depth > 10:\n        return []\n    visited.add(project_id)\n    return [project_id] + findProjectChain(project_id + 1, depth + 1, visited)\ndef listUsersByKeyword(keyword):\n    \"\"\"Return users whose name or bio contains the keyword.\"\"\"",
+        "detail": "functions",
+        "documentation": {}
+    },
+    {
+        "label": "listUsersByKeyword",
+        "kind": 2,
+        "importPath": "functions",
+        "description": "functions",
+        "peekOfCode": "def listUsersByKeyword(keyword):\n    \"\"\"Return users whose name or bio contains the keyword.\"\"\"\n    return [u for u in User().listAll() if keyword.lower() in (u[1]+u[3]).lower()]\ndef listProjectsBySkill(skill_name):\n    \"\"\"Return projects that are tagged with a given skill.\"\"\"\n    skill_id = None\n    for s in Skill().listAll():\n        if s[1].lower() == skill_name.lower():\n            skill_id = s[0]\n            break",
+        "detail": "functions",
+        "documentation": {}
+    },
+    {
+        "label": "listProjectsBySkill",
+        "kind": 2,
+        "importPath": "functions",
+        "description": "functions",
+        "peekOfCode": "def listProjectsBySkill(skill_name):\n    \"\"\"Return projects that are tagged with a given skill.\"\"\"\n    skill_id = None\n    for s in Skill().listAll():\n        if s[1].lower() == skill_name.lower():\n            skill_id = s[0]\n            break\n    if not skill_id:\n        return []\n    pskill = [ps[0] for ps in ProjectSkill().listAll() if ps[1] == skill_id]",
+        "detail": "functions",
+        "documentation": {}
+    },
+    {
+        "label": "binarySearch",
+        "kind": 2,
+        "importPath": "functions",
+        "description": "functions",
+        "peekOfCode": "def binarySearch(sorted_list, target):\n    \"\"\"Classic binary search (recursive).\"\"\"\n    if not sorted_list:\n        return -1\n    mid = len(sorted_list) // 2\n    if sorted_list[mid] == target:\n        return mid\n    if target < sorted_list[mid]:\n        return binarySearch(sorted_list[:mid], target)\n    result = binarySearch(sorted_list[mid + 1:], target)",
+        "detail": "functions",
+        "documentation": {}
+    },
+    {
+        "label": "quickSort",
+        "kind": 2,
+        "importPath": "functions",
+        "description": "functions",
+        "peekOfCode": "def quickSort(arr):\n    \"\"\"Simple quick sort (recursive).\"\"\"\n    if len(arr) <= 1:\n        return arr\n    pivot = arr[0]\n    lesser = quickSort([x for x in arr[1:] if x < pivot])\n    greater = quickSort([x for x in arr[1:] if x >= pivot])\n    return lesser + [pivot] + greater\ndef getAllProjectTitlesSorted():\n    \"\"\"Returns project titles sorted alphabetically using quickSort.\"\"\"",
+        "detail": "functions",
+        "documentation": {}
+    },
+    {
+        "label": "getAllProjectTitlesSorted",
+        "kind": 2,
+        "importPath": "functions",
+        "description": "functions",
+        "peekOfCode": "def getAllProjectTitlesSorted():\n    \"\"\"Returns project titles sorted alphabetically using quickSort.\"\"\"\n    titles = [p[1] for p in Project().listAll()]\n    return quickSort(titles)\ndef getMessagesForProject(project_id):\n    \"\"\"Returns all messages sent to a specific project.\"\"\"\n    return [m for m in Message().listAll() if m[2] == project_id]\ndef countProjectsPerUser():\n    \"\"\"Returns a dictionary of user_id to number of projects created.\"\"\"\n    count = {}",
+        "detail": "functions",
+        "documentation": {}
+    },
+    {
+        "label": "getMessagesForProject",
+        "kind": 2,
+        "importPath": "functions",
+        "description": "functions",
+        "peekOfCode": "def getMessagesForProject(project_id):\n    \"\"\"Returns all messages sent to a specific project.\"\"\"\n    return [m for m in Message().listAll() if m[2] == project_id]\ndef countProjectsPerUser():\n    \"\"\"Returns a dictionary of user_id to number of projects created.\"\"\"\n    count = {}\n    for project in Project().listAll():\n        uid = project[3]\n        count[uid] = count.get(uid, 0) + 1\n    return count",
+        "detail": "functions",
+        "documentation": {}
+    },
+    {
+        "label": "countProjectsPerUser",
+        "kind": 2,
+        "importPath": "functions",
+        "description": "functions",
+        "peekOfCode": "def countProjectsPerUser():\n    \"\"\"Returns a dictionary of user_id to number of projects created.\"\"\"\n    count = {}\n    for project in Project().listAll():\n        uid = project[3]\n        count[uid] = count.get(uid, 0) + 1\n    return count\ndef getTopContributors():\n    \"\"\"Returns user(s) who joined the most projects.\"\"\"\n    count = {}",
+        "detail": "functions",
+        "documentation": {}
+    },
+    {
+        "label": "getTopContributors",
+        "kind": 2,
+        "importPath": "functions",
+        "description": "functions",
+        "peekOfCode": "def getTopContributors():\n    \"\"\"Returns user(s) who joined the most projects.\"\"\"\n    count = {}\n    for m in Membership().listAll():\n        uid = m[0]\n        count[uid] = count.get(uid, 0) + 1\n    max_contrib = max(count.values(), default=0)\n    return [uid for uid, c in count.items() if c == max_contrib]\ndef findProjectByTitle(keyword):\n    \"\"\"Returns list of projects matching keyword in title.\"\"\"",
+        "detail": "functions",
+        "documentation": {}
+    },
+    {
+        "label": "findProjectByTitle",
+        "kind": 2,
+        "importPath": "functions",
+        "description": "functions",
+        "peekOfCode": "def findProjectByTitle(keyword):\n    \"\"\"Returns list of projects matching keyword in title.\"\"\"\n    return [p for p in Project().listAll() if keyword.lower() in p[1].lower()]",
+        "detail": "functions",
+        "documentation": {}
+    },
+    {
+        "label": "menu",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def menu():\n    print(\"\\n--- ProjectMatch Main Menu ---\")\n    print(\"1. List users by keyword\")\n    print(\"2. List projects by skill\")\n    print(\"3. Show sorted project titles\")\n    print(\"4. Show messages for a project\")\n    print(\"5. Show project counts per user\")\n    print(\"6. Show top project contributors\")\n    print(\"7. Search projects by title\")\n    print(\"8. Demo recursive project chain\")",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def main():\n    initDb()\n    print(\"Welcome to ProjectMatch!\")\n    while True:\n        menu()\n        choice = input(\"Choose an option: \").strip()\n        if choice == \"1\":\n            kw = input(\"Enter a keyword: \")\n            for u in listUsersByKeyword(kw):\n                print(u)",
+        "detail": "main",
+        "documentation": {}
+    }
+]
