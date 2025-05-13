@@ -53,4 +53,11 @@ def main():
         elif choice == "8":
             pid = int(input("Enter start project ID: "))
             print("Project chain:", findProjectChain(pid))
-        elif cho
+        elif choice == "9":
+            print("Goodbye!")
+            break
+        else:
+            print("Invalid option.")
+
+if __name__ == "__main__":
+    main()

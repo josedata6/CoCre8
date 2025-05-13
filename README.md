@@ -1,7 +1,7 @@
 # ProjectMatch
 
 # ProjectMatch – Project Partners On-Demand
-<!---
+
 ProjectMatch is a console-based Python + SQLite application that allows users to create, showcase, and join collaborative projects. It's built to help people find project partners and contribute to real-world ideas.
 
 ---
