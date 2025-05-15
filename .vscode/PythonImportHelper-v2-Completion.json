@@ -295,7 +295,7 @@
         "kind": 2,
         "importPath": "functions",
         "description": "functions",
-        "peekOfCode": "def findProjectChain(project_id, depth=0, visited=None):\n    \"\"\"Recursive mock to simulate a dependency walk (e.g., linked project threads).\"\"\"\n    if visited is None:\n        visited = set()\n    if project_id in visited or depth > 10:\n        return []\n    visited.add(project_id)\n    return [project_id] + findProjectChain(project_id + 1, depth + 1, visited)\ndef listUsersByKeyword(keyword):\n    \"\"\"Return users whose name or bio contains the keyword.\"\"\"",
+        "peekOfCode": "def findProjectChain(project_id, depth=0, visited=None):\n    \"\"\"\n    Recursively traverses a mock dependency chain of projects.\n    Stops if a project has been visited already or recursion exceeds 10 levels.\n    This simulates advanced recursive logic like tree-walks or dependency graphs.\n    \"\"\"\n    if visited is None:\n        visited = set()\n    if project_id in visited or depth > 10:\n        return []",
         "detail": "functions",
         "documentation": {}
     },
@@ -304,7 +304,7 @@
         "kind": 2,
         "importPath": "functions",
         "description": "functions",
-        "peekOfCode": "def listUsersByKeyword(keyword):\n    \"\"\"Return users whose name or bio contains the keyword.\"\"\"\n    return [u for u in User().listAll() if keyword.lower() in (u[1]+u[3]).lower()]\ndef listProjectsBySkill(skill_name):\n    \"\"\"Return projects that are tagged with a given skill.\"\"\"\n    skill_id = None\n    for s in Skill().listAll():\n        if s[1].lower() == skill_name.lower():\n            skill_id = s[0]\n            break",
+        "peekOfCode": "def listUsersByKeyword(keyword):\n    \"\"\"Return users whose name or bio contains the keyword (case-insensitive).\"\"\"\n    return [u for u in User().listAll() if keyword.lower() in (u[1] + u[3]).lower()]\n# Filter projects by a matching skill\ndef listProjectsBySkill(skill_name):\n    \"\"\"\n    Return a list of projects that require a specific skill.\n    Searches Skills table, finds matching skill ID, and links it to projects.\n    \"\"\"\n    skill_id = None",
         "detail": "functions",
         "documentation": {}
     },
@@ -313,7 +313,7 @@
         "kind": 2,
         "importPath": "functions",
         "description": "functions",
-        "peekOfCode": "def listProjectsBySkill(skill_name):\n    \"\"\"Return projects that are tagged with a given skill.\"\"\"\n    skill_id = None\n    for s in Skill().listAll():\n        if s[1].lower() == skill_name.lower():\n            skill_id = s[0]\n            break\n    if not skill_id:\n        return []\n    pskill = [ps[0] for ps in ProjectSkill().listAll() if ps[1] == skill_id]",
+        "peekOfCode": "def listProjectsBySkill(skill_name):\n    \"\"\"\n    Return a list of projects that require a specific skill.\n    Searches Skills table, finds matching skill ID, and links it to projects.\n    \"\"\"\n    skill_id = None\n    for s in Skill().listAll():\n        if s[1].lower() == skill_name.lower():\n            skill_id = s[0]\n            break",
         "detail": "functions",
         "documentation": {}
     },
@@ -322,7 +322,7 @@
         "kind": 2,
         "importPath": "functions",
         "description": "functions",
-        "peekOfCode": "def binarySearch(sorted_list, target):\n    \"\"\"Classic binary search (recursive).\"\"\"\n    if not sorted_list:\n        return -1\n    mid = len(sorted_list) // 2\n    if sorted_list[mid] == target:\n        return mid\n    if target < sorted_list[mid]:\n        return binarySearch(sorted_list[:mid], target)\n    result = binarySearch(sorted_list[mid + 1:], target)",
+        "peekOfCode": "def binarySearch(sorted_list, target):\n    \"\"\"Recursively search for a value in a sorted list. Returns index or -1 if not found.\"\"\"\n    if not sorted_list:\n        return -1\n    mid = len(sorted_list) // 2\n    if sorted_list[mid] == target:\n        return mid\n    if target < sorted_list[mid]:\n        return binarySearch(sorted_list[:mid], target)\n    result = binarySearch(sorted_list[mid + 1:], target)",
         "detail": "functions",
         "documentation": {}
     },
@@ -331,7 +331,7 @@
         "kind": 2,
         "importPath": "functions",
         "description": "functions",
-        "peekOfCode": "def quickSort(arr):\n    \"\"\"Simple quick sort (recursive).\"\"\"\n    if len(arr) <= 1:\n        return arr\n    pivot = arr[0]\n    lesser = quickSort([x for x in arr[1:] if x < pivot])\n    greater = quickSort([x for x in arr[1:] if x >= pivot])\n    return lesser + [pivot] + greater\ndef getAllProjectTitlesSorted():\n    \"\"\"Returns project titles sorted alphabetically using quickSort.\"\"\"",
+        "peekOfCode": "def quickSort(arr):\n    \"\"\"Recursively sorts a list using quick sort algorithm.\"\"\"\n    if len(arr) <= 1:\n        return arr\n    pivot = arr[0]\n    lesser = quickSort([x for x in arr[1:] if x < pivot])\n    greater = quickSort([x for x in arr[1:] if x >= pivot])\n    return lesser + [pivot] + greater\n# Get sorted project titles alphabetically\ndef getAllProjectTitlesSorted():",
         "detail": "functions",
         "documentation": {}
     },
@@ -340,7 +340,7 @@
         "kind": 2,
         "importPath": "functions",
         "description": "functions",
-        "peekOfCode": "def getAllProjectTitlesSorted():\n    \"\"\"Returns project titles sorted alphabetically using quickSort.\"\"\"\n    titles = [p[1] for p in Project().listAll()]\n    return quickSort(titles)\ndef getMessagesForProject(project_id):\n    \"\"\"Returns all messages sent to a specific project.\"\"\"\n    return [m for m in Message().listAll() if m[2] == project_id]\ndef countProjectsPerUser():\n    \"\"\"Returns a dictionary of user_id to number of projects created.\"\"\"\n    count = {}",
+        "peekOfCode": "def getAllProjectTitlesSorted():\n    \"\"\"Return a list of all project titles sorted alphabetically.\"\"\"\n    titles = [p[1] for p in Project().listAll()]  # Extract only titles (index 1)\n    return quickSort(titles)\n# Return all messages tied to a given project ID\ndef getMessagesForProject(project_id):\n    \"\"\"Returns all messages posted to a specific project.\"\"\"\n    return [m for m in Message().listAll() if m[2] == project_id]\n# Count how many projects each user has created\ndef countProjectsPerUser():",
         "detail": "functions",
         "documentation": {}
     },
@@ -349,7 +349,7 @@
         "kind": 2,
         "importPath": "functions",
         "description": "functions",
-        "peekOfCode": "def getMessagesForProject(project_id):\n    \"\"\"Returns all messages sent to a specific project.\"\"\"\n    return [m for m in Message().listAll() if m[2] == project_id]\ndef countProjectsPerUser():\n    \"\"\"Returns a dictionary of user_id to number of projects created.\"\"\"\n    count = {}\n    for project in Project().listAll():\n        uid = project[3]\n        count[uid] = count.get(uid, 0) + 1\n    return count",
+        "peekOfCode": "def getMessagesForProject(project_id):\n    \"\"\"Returns all messages posted to a specific project.\"\"\"\n    return [m for m in Message().listAll() if m[2] == project_id]\n# Count how many projects each user has created\ndef countProjectsPerUser():\n    \"\"\"Returns a dictionary of user_id to number of projects they’ve created.\"\"\"\n    count = {}\n    for project in Project().listAll():\n        uid = project[3]  # created_by field\n        count[uid] = count.get(uid, 0) + 1",
         "detail": "functions",
         "documentation": {}
     },
@@ -358,7 +358,7 @@
         "kind": 2,
         "importPath": "functions",
         "description": "functions",
-        "peekOfCode": "def countProjectsPerUser():\n    \"\"\"Returns a dictionary of user_id to number of projects created.\"\"\"\n    count = {}\n    for project in Project().listAll():\n        uid = project[3]\n        count[uid] = count.get(uid, 0) + 1\n    return count\ndef getTopContributors():\n    \"\"\"Returns user(s) who joined the most projects.\"\"\"\n    count = {}",
+        "peekOfCode": "def countProjectsPerUser():\n    \"\"\"Returns a dictionary of user_id to number of projects they’ve created.\"\"\"\n    count = {}\n    for project in Project().listAll():\n        uid = project[3]  # created_by field\n        count[uid] = count.get(uid, 0) + 1\n    return count\n# Identify the user(s) who joined the most projects\ndef getTopContributors():\n    \"\"\"Returns a list of user_ids for those who joined the most projects.\"\"\"",
         "detail": "functions",
         "documentation": {}
     },
@@ -367,7 +367,7 @@
         "kind": 2,
         "importPath": "functions",
         "description": "functions",
-        "peekOfCode": "def getTopContributors():\n    \"\"\"Returns user(s) who joined the most projects.\"\"\"\n    count = {}\n    for m in Membership().listAll():\n        uid = m[0]\n        count[uid] = count.get(uid, 0) + 1\n    max_contrib = max(count.values(), default=0)\n    return [uid for uid, c in count.items() if c == max_contrib]\ndef findProjectByTitle(keyword):\n    \"\"\"Returns list of projects matching keyword in title.\"\"\"",
+        "peekOfCode": "def getTopContributors():\n    \"\"\"Returns a list of user_ids for those who joined the most projects.\"\"\"\n    count = {}\n    for m in Membership().listAll():\n        uid = m[0]  # user_id\n        count[uid] = count.get(uid, 0) + 1\n    max_contrib = max(count.values(), default=0)\n    return [uid for uid, c in count.items() if c == max_contrib]\n# Search for projects with a matching keyword in the title\ndef findProjectByTitle(keyword):",
         "detail": "functions",
         "documentation": {}
     },
@@ -376,7 +376,7 @@
         "kind": 2,
         "importPath": "functions",
         "description": "functions",
-        "peekOfCode": "def findProjectByTitle(keyword):\n    \"\"\"Returns list of projects matching keyword in title.\"\"\"\n    return [p for p in Project().listAll() if keyword.lower() in p[1].lower()]",
+        "peekOfCode": "def findProjectByTitle(keyword):\n    \"\"\"Returns a list of projects where the title contains the given keyword.\"\"\"\n    return [p for p in Project().listAll() if keyword.lower() in p[1].lower()]",
         "detail": "functions",
         "documentation": {}
     },
