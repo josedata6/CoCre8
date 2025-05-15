@@ -33,7 +33,6 @@ projectmatch/
 └── README.md              # Instructions and reflection
 ```
 
- --->
 ### How to Run Co-Cre8
 Requirements
 Python 3.7 or higher
