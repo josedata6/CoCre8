@@ -46,7 +46,7 @@ Clone or download the project folder:
 bash
 Copy
 Edit
-git clone https://github.com/josedat6/CoCre8.git
+git clone https://github.com/josedata6/CoCre8.git
 cd co-cre8
 Run the application:
 
