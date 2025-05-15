@@ -1,15 +1,22 @@
+# Import database initializer
 from db_schema import initDb
+
+# Import model classes to interact with database tables
 from models.user import User
 from models.project import Project
 from models.membership import Membership
 from models.message import Message
+
+# Import controller functions that combine model logic with search/sort/analysis
 from functions import (
     listUsersByKeyword, listProjectsBySkill, getAllProjectTitlesSorted,
     getMessagesForProject, countProjectsPerUser, getTopContributors,
     findProjectByTitle
 )
-import datetime
 
+import datetime  # For generating join date
+
+# Display the menu options for the user
 def menu():
     print("\n--- Co-Cre8 Main Menu ---")
     print("1. List users by keyword")
@@ -23,52 +30,78 @@ def menu():
     print("9. Join an existing project")
     print("0. Exit")
 
+# Main function: runs the application
 def main():
-    initDb()
+    initDb()  # Initialize database and tables (if not already created)
     print("Welcome to Co-Cre8!")
+
+    # Application loop: keeps running until the user chooses to exit
     while True:
         menu()
         choice = input("Choose an option: ").strip()
+
+        # 1. List users whose name or bio matches a keyword
         if choice == "1":
             kw = input("Enter a keyword: ")
             for u in listUsersByKeyword(kw):
                 print(u)
+
+        # 2. List projects that are tagged with a specific skill
         elif choice == "2":
             sk = input("Enter skill name: ")
             for p in listProjectsBySkill(sk):
                 print(p)
+
+        # 3. Display all project titles sorted alphabetically
         elif choice == "3":
             print(getAllProjectTitlesSorted())
+
+        # 4. Show all messages posted in a specific project
         elif choice == "4":
             pid = int(input("Enter project ID: "))
             for m in getMessagesForProject(pid):
                 print(m)
+
+        # 5. Count and display how many projects each user has created
         elif choice == "5":
             print(countProjectsPerUser())
+
+        # 6. Identify and show user(s) who joined the most projects
         elif choice == "6":
             print("Top contributors (user_id):", getTopContributors())
+
+        # 7. Search for projects with a keyword in their title
         elif choice == "7":
             kw = input("Enter title keyword: ")
             for p in findProjectByTitle(kw):
                 print(p)
+
+        # 8. Create a new project and assign the current user as creator
         elif choice == "8":
             user_id = int(input("Enter your user ID: "))
             title = input("Enter project title: ")
             desc = input("Enter description: ")
             Project().create(title, desc, user_id)
-            print("✅ Project created.")
+            print("Project created.")
+
+        # 9. Join a project with a specific role and today's date
         elif choice == "9":
             user_id = int(input("Enter your user ID: "))
             pid = int(input("Enter the project ID you want to join: "))
             role = input("Enter your role (e.g., developer, designer): ")
             today = datetime.date.today().isoformat()
             Membership().create(user_id, pid, role, today)
-            print("✅ Successfully joined the project.")
+            print("Successfully joined the project.")
+
+        # 0. Exit the application
         elif choice == "0":
             print("Goodbye from Co-Cre8!")
             break
+
+        # Handle invalid input
         else:
             print("Invalid option.")
 
+# Run the main function if the script is executed directly
 if __name__ == "__main__":
     main()
