@@ -277,7 +277,7 @@
         "kind": 2,
         "importPath": "db_schema",
         "description": "db_schema",
-        "peekOfCode": "def initDb(db_path=\"projectmatch.db\"):\n    \"\"\"Initializes the SQLite database using the TABLE_DEFS dictionary.\"\"\"\n    conn = sqlite3.connect(db_path)\n    cur = conn.cursor()\n    for table, fields in TABLE_DEFS.items():\n        columns = \",\\n    \".join([\n            f\"{col} {typ}\" for col, typ in fields.items() if not col.startswith(\"FOREIGN KEY\")\n        ])\n        fks = \",\\n    \".join([\n            f\"{col} {typ}\" for col, typ in fields.items() if col.startswith(\"FOREIGN KEY\")",
+        "peekOfCode": "def initDb(db_path=\"projectmatch.db\"):\n    \"\"\"\n    Initializes the SQLite database using the TABLE_DEFS dictionary.\n    Creates tables if they do not already exist.\n    \"\"\"\n    conn = sqlite3.connect(db_path)   # Connect to (or create) the SQLite database\n    cur = conn.cursor()               # Create a cursor to execute SQL statements\n    # Loop through each table definition\n    for table, fields in TABLE_DEFS.items():\n        # Extract standard column definitions (skip foreign keys)",
         "detail": "db_schema",
         "documentation": {}
     },
@@ -286,7 +286,7 @@
         "kind": 5,
         "importPath": "db_schema",
         "description": "db_schema",
-        "peekOfCode": "TABLE_DEFS = {\n    \"Users\": {\n        \"user_id\": \"INTEGER PRIMARY KEY AUTOINCREMENT\",\n        \"name\": \"TEXT NOT NULL\",\n        \"email\": \"TEXT NOT NULL UNIQUE\",\n        \"bio\": \"TEXT\"\n    },\n    \"Projects\": {\n        \"project_id\": \"INTEGER PRIMARY KEY AUTOINCREMENT\",\n        \"title\": \"TEXT NOT NULL\",",
+        "peekOfCode": "TABLE_DEFS = {\n    \"Users\": {\n        \"user_id\": \"INTEGER PRIMARY KEY AUTOINCREMENT\",  # Unique user ID\n        \"name\": \"TEXT NOT NULL\",                         # User's name\n        \"email\": \"TEXT NOT NULL UNIQUE\",                 # Unique email address\n        \"bio\": \"TEXT\"                                    # Short user biography\n    },\n    \"Projects\": {\n        \"project_id\": \"INTEGER PRIMARY KEY AUTOINCREMENT\",  # Unique project ID\n        \"title\": \"TEXT NOT NULL\",                           # Project title",
         "detail": "db_schema",
         "documentation": {}
     },
