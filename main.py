@@ -11,7 +11,7 @@ from functions import (
 import datetime
 
 def menu():
-    print("\n--- ProjectMatch Main Menu ---")
+    print("\n--- Co-Cre8 Main Menu ---")
     print("1. List users by keyword")
     print("2. List projects by skill")
     print("3. Show sorted project titles")
@@ -26,7 +26,7 @@ def menu():
 
 def main():
     initDb()
-    print("Welcome to ProjectMatch!")
+    print("Welcome to Co-Cre8!")
     while True:
         menu()
         choice = input("Choose an option: ").strip()

@@ -393,7 +393,7 @@
         "kind": 2,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "def menu():\n    print(\"\\n--- ProjectMatch Main Menu ---\")\n    print(\"1. List users by keyword\")\n    print(\"2. List projects by skill\")\n    print(\"3. Show sorted project titles\")\n    print(\"4. Show messages for a project\")\n    print(\"5. Show project counts per user\")\n    print(\"6. Show top project contributors\")\n    print(\"7. Search projects by title\")\n    print(\"8. Demo recursive project chain\")",
+        "peekOfCode": "def menu():\n    print(\"\\n--- Co-Cre8 Main Menu ---\")\n    print(\"1. List users by keyword\")\n    print(\"2. List projects by skill\")\n    print(\"3. Show sorted project titles\")\n    print(\"4. Show messages for a project\")\n    print(\"5. Show project counts per user\")\n    print(\"6. Show top project contributors\")\n    print(\"7. Search projects by title\")\n    print(\"8. Demo recursive project chain\")",
         "detail": "main",
         "documentation": {}
     },
@@ -402,7 +402,7 @@
         "kind": 2,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "def main():\n    initDb()\n    print(\"Welcome to ProjectMatch!\")\n    while True:\n        menu()\n        choice = input(\"Choose an option: \").strip()\n        if choice == \"1\":\n            kw = input(\"Enter a keyword: \")\n            for u in listUsersByKeyword(kw):\n                print(u)",
+        "peekOfCode": "def main():\n    initDb()\n    print(\"Welcome to Co-Cre8!\")\n    while True:\n        menu()\n        choice = input(\"Choose an option: \").strip()\n        if choice == \"1\":\n            kw = input(\"Enter a keyword: \")\n            for u in listUsersByKeyword(kw):\n                print(u)",
         "detail": "main",
         "documentation": {}
     }
