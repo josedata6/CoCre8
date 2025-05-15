@@ -1,8 +1,8 @@
-# ProjectMatch
+# Co-Cre8
 
-# ProjectMatch – Project Partners On-Demand
+# Co-Cre8 – Project Partners On-Demand
 
-ProjectMatch is a console-based Python + SQLite application that allows users to create, showcase, and join collaborative projects. It's built to help people find project partners and contribute to real-world ideas.
+Co-Cre8 is a console-based Python + SQLite application that allows users to create, showcase, and join collaborative projects. It's built to help people find project partners and contribute to real-world ideas.
 
 ---
 
@@ -34,3 +34,26 @@ projectmatch/
 
 
  --->
+### How to Run Co-Cre8
+Requirements
+Python 3.7 or higher
+
+No external libraries needed (uses Python’s built-in sqlite3)
+
+######### Setup & Execution
+Clone or download the project folder:
+
+bash
+Copy
+Edit
+git clone https://github.com/josedat6/co-cre8.git
+cd co-cre8
+Run the application:
+
+bash
+Copy
+Edit
+python main.py
+This will automatically create the database (projectmatch.db) if it doesn’t exist.
+
+You’ll see an interactive menu in your terminal to create projects, join them, search, and more.
