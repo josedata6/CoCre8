@@ -89,7 +89,7 @@ def main():
             user_id = int(input("Enter your user ID: "))
             pid = int(input("Enter the project ID you want to join: "))
             role = input("Enter your role (e.g., developer, designer): ")
-            today = datetime.date.today().isoformat()
+            today = datetime.date.today().isoformat() # Format date as YYYY-MM-DD
             Membership().create(user_id, pid, role, today)
             print("Successfully joined the project.")
 
