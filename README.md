@@ -17,7 +17,7 @@ Co-Cre8 is a console-based Python + SQLite application that allows users to crea
 
 ---
 
-####
+```
 projectmatch/
 ├── db_schema.py           # Creates and initializes all tables
 ├── main.py                # App entry point and console menu
@@ -31,9 +31,8 @@ projectmatch/
 │   ├── projectSkill.py    # Links skills to projects
 │   └── message.py         # Project messaging
 └── README.md              # Instructions and reflection
+```
 
-
- --->
 ### How to Run Co-Cre8
 Requirements
 Python 3.7 or higher
@@ -43,16 +42,10 @@ No external libraries needed (uses Python’s built-in sqlite3)
 ######### Setup & Execution
 Clone or download the project folder:
 
-bash
-Copy
-Edit
-git clone https://github.com/josedat6/co-cre8.git
+git clone https://github.com/josedata6/CoCre8.git
 cd co-cre8
 Run the application:
 
-bash
-Copy
-Edit
 python main.py
 This will automatically create the database (projectmatch.db) if it doesn’t exist.
 
