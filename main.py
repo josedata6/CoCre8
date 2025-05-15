@@ -1,13 +1,13 @@
 from db_schema import initDb
+from models.user import User
+from models.project import Project
+from models.membership import Membership
+from models.message import Message
 from functions import (
     listUsersByKeyword, listProjectsBySkill, getAllProjectTitlesSorted,
     getMessagesForProject, countProjectsPerUser, getTopContributors,
     findProjectByTitle, findProjectChain
 )
-from models.user import User
-from models.project import Project
-from models.membership import Membership
-from models.message import Message
 import datetime
 
 def menu():
@@ -20,7 +20,9 @@ def menu():
     print("6. Show top project contributors")
     print("7. Search projects by title")
     print("8. Demo recursive project chain")
-    print("9. Exit")
+    print("9. Create a new project")
+    print("10. Join an existing project")
+    print("0. Exit")
 
 def main():
     initDb()
@@ -54,6 +56,19 @@ def main():
             pid = int(input("Enter start project ID: "))
             print("Project chain:", findProjectChain(pid))
         elif choice == "9":
+            user_id = int(input("Enter your user ID: "))
+            title = input("Enter project title: ")
+            desc = input("Enter description: ")
+            Project().create(title, desc, user_id)
+            print("✅ Project created.")
+        elif choice == "10":
+            user_id = int(input("Enter your user ID: "))
+            pid = int(input("Enter the project ID you want to join: "))
+            role = input("Enter your role (e.g., developer, designer): ")
+            today = datetime.date.today().isoformat()
+            Membership().create(user_id, pid, role, today)
+            print("✅ Successfully joined the project.")
+        elif choice == "0":
             print("Goodbye!")
             break
         else:
