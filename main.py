@@ -6,7 +6,7 @@ from models.message import Message
 from functions import (
     listUsersByKeyword, listProjectsBySkill, getAllProjectTitlesSorted,
     getMessagesForProject, countProjectsPerUser, getTopContributors,
-    findProjectByTitle, findProjectChain
+    findProjectByTitle
 )
 import datetime
 
@@ -19,9 +19,8 @@ def menu():
     print("5. Show project counts per user")
     print("6. Show top project contributors")
     print("7. Search projects by title")
-    print("8. Demo recursive project chain")
-    print("9. Create a new project")
-    print("10. Join an existing project")
+    print("8. Create a new project")
+    print("9. Join an existing project")
     print("0. Exit")
 
 def main():
@@ -53,15 +52,12 @@ def main():
             for p in findProjectByTitle(kw):
                 print(p)
         elif choice == "8":
-            pid = int(input("Enter start project ID: "))
-            print("Project chain:", findProjectChain(pid))
-        elif choice == "9":
             user_id = int(input("Enter your user ID: "))
             title = input("Enter project title: ")
             desc = input("Enter description: ")
             Project().create(title, desc, user_id)
             print("✅ Project created.")
-        elif choice == "10":
+        elif choice == "9":
             user_id = int(input("Enter your user ID: "))
             pid = int(input("Enter the project ID you want to join: "))
             role = input("Enter your role (e.g., developer, designer): ")
@@ -69,7 +65,7 @@ def main():
             Membership().create(user_id, pid, role, today)
             print("✅ Successfully joined the project.")
         elif choice == "0":
-            print("Goodbye!")
+            print("Goodbye from Co-Cre8!")
             break
         else:
             print("Invalid option.")

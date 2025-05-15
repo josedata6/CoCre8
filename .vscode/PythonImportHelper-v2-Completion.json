@@ -201,14 +201,6 @@
         "documentation": {}
     },
     {
-        "label": "findProjectChain",
-        "importPath": "functions",
-        "description": "functions",
-        "isExtraImport": true,
-        "detail": "functions",
-        "documentation": {}
-    },
-    {
         "label": "datetime",
         "kind": 6,
         "isExtraImport": true,
@@ -393,7 +385,7 @@
         "kind": 2,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "def menu():\n    print(\"\\n--- Co-Cre8 Main Menu ---\")\n    print(\"1. List users by keyword\")\n    print(\"2. List projects by skill\")\n    print(\"3. Show sorted project titles\")\n    print(\"4. Show messages for a project\")\n    print(\"5. Show project counts per user\")\n    print(\"6. Show top project contributors\")\n    print(\"7. Search projects by title\")\n    print(\"8. Demo recursive project chain\")",
+        "peekOfCode": "def menu():\n    print(\"\\n--- Co-Cre8 Main Menu ---\")\n    print(\"1. List users by keyword\")\n    print(\"2. List projects by skill\")\n    print(\"3. Show sorted project titles\")\n    print(\"4. Show messages for a project\")\n    print(\"5. Show project counts per user\")\n    print(\"6. Show top project contributors\")\n    print(\"7. Search projects by title\")\n    print(\"8. Create a new project\")",
         "detail": "main",
         "documentation": {}
     },
