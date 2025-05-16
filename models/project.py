@@ -7,7 +7,7 @@ class Project(BaseModel):
             "INSERT INTO Projects (title, description, created_by) VALUES (?, ?, ?)",
             (title, description, created_by)
         )
-
+#        # This line checks if the created_by user exists in the Users table.
     def getById(self, project_id):
         """Get project details by ID."""
         rows = self._run("SELECT * FROM Projects WHERE project_id = ?", (project_id,), fetch=True)

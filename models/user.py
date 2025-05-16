@@ -9,12 +9,12 @@ class User(BaseModel):
         """Retrieve a user by ID."""
         rows = self._run("SELECT * FROM Users WHERE user_id = ?", (user_id,), fetch=True)
         return rows[0] if rows else None
-
-    def update(self, user_id, name=None, email=None, bio=None):
+#This line defines a method called update that takes a user_id and optional parameters name, email, and bio.
+    def update(self, user_id, name=None, email=None, bio=None): 
         """Update fields of a user by ID."""
-        fields, values = [], []
+        fields, values = [], [] #This line creates two empty lists called fields and values.
         if name:
-            fields.append("name = ?")
+            fields.append("name = ?") #This line adds the string "name = ?" to the fields list.
             values.append(name)
         if email:
             fields.append("email = ?")
@@ -23,6 +23,7 @@ class User(BaseModel):
             fields.append("bio = ?")
             values.append(bio)
         values.append(user_id)
+        #This line constructs an SQL query string that updates the Users table.
         sql = f"UPDATE Users SET {', '.join(fields)} WHERE user_id = ?"
         self._run(sql, tuple(values))
 

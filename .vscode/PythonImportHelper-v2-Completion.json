@@ -241,7 +241,7 @@
         "kind": 6,
         "importPath": "models.project",
         "description": "models.project",
-        "peekOfCode": "class Project(BaseModel):\n    def create(self, title, description, created_by):\n        \"\"\"Create a new project.\"\"\"\n        self._run(\n            \"INSERT INTO Projects (title, description, created_by) VALUES (?, ?, ?)\",\n            (title, description, created_by)\n        )\n    def getById(self, project_id):\n        \"\"\"Get project details by ID.\"\"\"\n        rows = self._run(\"SELECT * FROM Projects WHERE project_id = ?\", (project_id,), fetch=True)",
+        "peekOfCode": "class Project(BaseModel):\n    def create(self, title, description, created_by):\n        \"\"\"Create a new project.\"\"\"\n        self._run(\n            \"INSERT INTO Projects (title, description, created_by) VALUES (?, ?, ?)\",\n            (title, description, created_by)\n        )\n#        # This line checks if the created_by user exists in the Users table.\n    def getById(self, project_id):\n        \"\"\"Get project details by ID.\"\"\"",
         "detail": "models.project",
         "documentation": {}
     },
@@ -250,7 +250,7 @@
         "kind": 6,
         "importPath": "models.projectSkill",
         "description": "models.projectSkill",
-        "peekOfCode": "class ProjectSkill(BaseModel):\n    def create(self, project_id, skill_id):\n        \"\"\"Link a skill to a project.\"\"\"\n        self._run(\"INSERT INTO ProjectSkills (project_id, skill_id) VALUES (?, ?)\", (project_id, skill_id))\n    def getById(self, project_id, skill_id):\n        \"\"\"Retrieve a specific project-skill link.\"\"\"\n        rows = self._run(\n            \"SELECT * FROM ProjectSkills WHERE project_id = ? AND skill_id = ?\",\n            (project_id, skill_id),\n            fetch=True",
+        "peekOfCode": "class ProjectSkill(BaseModel):\n    def create(self, project_id, skill_id):\n        \"\"\"Link a skill to a project.\"\"\"\n        self._run(\"INSERT INTO ProjectSkills (project_id, skill_id) VALUES (?, ?)\", (project_id, skill_id))\n#        # This line checks if the skill_id exists in the Skills table.\n    def getById(self, project_id, skill_id):\n        \"\"\"Retrieve a specific project-skill link.\"\"\"\n        rows = self._run(\n            \"SELECT * FROM ProjectSkills WHERE project_id = ? AND skill_id = ?\",\n            (project_id, skill_id),",
         "detail": "models.projectSkill",
         "documentation": {}
     },
@@ -268,7 +268,7 @@
         "kind": 6,
         "importPath": "models.user",
         "description": "models.user",
-        "peekOfCode": "class User(BaseModel):\n    def create(self, name, email, bio):\n        \"\"\"Add a new user to the database.\"\"\"\n        self._run(\"INSERT INTO Users (name, email, bio) VALUES (?, ?, ?)\", (name, email, bio))\n    def getById(self, user_id):\n        \"\"\"Retrieve a user by ID.\"\"\"\n        rows = self._run(\"SELECT * FROM Users WHERE user_id = ?\", (user_id,), fetch=True)\n        return rows[0] if rows else None\n    def update(self, user_id, name=None, email=None, bio=None):\n        \"\"\"Update fields of a user by ID.\"\"\"",
+        "peekOfCode": "class User(BaseModel):\n    def create(self, name, email, bio):\n        \"\"\"Add a new user to the database.\"\"\"\n        self._run(\"INSERT INTO Users (name, email, bio) VALUES (?, ?, ?)\", (name, email, bio))\n    def getById(self, user_id):\n        \"\"\"Retrieve a user by ID.\"\"\"\n        rows = self._run(\"SELECT * FROM Users WHERE user_id = ?\", (user_id,), fetch=True)\n        return rows[0] if rows else None\n#This line defines a method called update that takes a user_id and optional parameters name, email, and bio.\n    def update(self, user_id, name=None, email=None, bio=None): ",
         "detail": "models.user",
         "documentation": {}
     },
@@ -295,7 +295,7 @@
         "kind": 2,
         "importPath": "functions",
         "description": "functions",
-        "peekOfCode": "def findProjectChain(project_id, depth=0, visited=None):\n    \"\"\"\n    Recursively traverses a mock dependency chain of projects.\n    Stops if a project has been visited already or recursion exceeds 10 levels.\n    This simulates advanced recursive logic like tree-walks or dependency graphs.\n    \"\"\"\n    if visited is None:\n        visited = set()\n    if project_id in visited or depth > 10: #base case\n        return []",
+        "peekOfCode": "def findProjectChain(project_id, depth=0, visited=None):\n    \"\"\"\n    Stops if a project has been visited already or recursion exceeds 10 levels.\n    Returns a list of project IDs in the chain.\"\"\"\n    if visited is None:\n        visited = set()\n    if project_id in visited or depth > 10: #base case\n        return []\n    visited.add(project_id)\n    return [project_id] + findProjectChain(project_id + 1, depth + 1, visited)",
         "detail": "functions",
         "documentation": {}
     },

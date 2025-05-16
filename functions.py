@@ -9,10 +9,8 @@ from models.message import Message            # For accessing project messages
 # Recursive function: simulate a walk through a hypothetical chain of linked projects
 def findProjectChain(project_id, depth=0, visited=None):
     """
-    Recursively traverses a mock dependency chain of projects.
     Stops if a project has been visited already or recursion exceeds 10 levels.
-    This simulates advanced recursive logic like tree-walks or dependency graphs.
-    """
+    Returns a list of project IDs in the chain."""
     if visited is None:
         visited = set()
     if project_id in visited or depth > 10: #base case
@@ -39,6 +37,7 @@ def listProjectsBySkill(skill_name):
     if not skill_id:
         return []
     # Get all project IDs that include this skill
+    # Go through all the project-skill pairs, and collect the project IDs where the skill ID matches the one we're looking for.
     pskill = [ps[0] for ps in ProjectSkill().listAll() if ps[1] == skill_id]
     return [p for p in Project().listAll() if p[0] in pskill]
 

@@ -38,7 +38,7 @@ def main():
     # Application loop: keeps running until the user chooses to exit
     while True:
         menu()
-        choice = input("Choose an option: ").strip()
+        choice = input("Choose an option: ").strip() # Get user input for menu choice
 
         # 1. List users whose name or bio matches a keyword
         if choice == "1":
@@ -47,27 +47,27 @@ def main():
                 print(u)
 
         # 2. List projects that are tagged with a specific skill
-        elif choice == "2":
-            sk = input("Enter skill name: ")
-            for p in listProjectsBySkill(sk):
+        elif choice == "2": # List projects by skill
+            sk = input("Enter skill name: ") # Get skill name from user
+            for p in listProjectsBySkill(sk): # List projects that match the skill
                 print(p)
 
         # 3. Display all project titles sorted alphabetically
-        elif choice == "3":
+        elif choice == "3": # Show sorted project titles
             print(getAllProjectTitlesSorted())
 
         # 4. Show all messages posted in a specific project
         elif choice == "4":
             pid = int(input("Enter project ID: "))
-            for m in getMessagesForProject(pid):
-                print(m)
+            for m in getMessagesForProject(pid): # Get messages for the project
+                print(m) # Print each message
 
         # 5. Count and display how many projects each user has created
         elif choice == "5":
-            print(countProjectsPerUser())
+            print(countProjectsPerUser()) # Count projects per user
 
         # 6. Identify and show user(s) who joined the most projects
-        elif choice == "6":
+        elif choice == "6": # Show top contributors
             print("Top contributors (user_id):", getTopContributors())
 
         # 7. Search for projects with a keyword in their title
