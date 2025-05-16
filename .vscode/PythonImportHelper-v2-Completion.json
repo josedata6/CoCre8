@@ -295,7 +295,7 @@
         "kind": 2,
         "importPath": "functions",
         "description": "functions",
-        "peekOfCode": "def findProjectChain(project_id, depth=0, visited=None):\n    \"\"\"\n    Recursively traverses a mock dependency chain of projects.\n    Stops if a project has been visited already or recursion exceeds 10 levels.\n    This simulates advanced recursive logic like tree-walks or dependency graphs.\n    \"\"\"\n    if visited is None:\n        visited = set()\n    if project_id in visited or depth > 10:\n        return []",
+        "peekOfCode": "def findProjectChain(project_id, depth=0, visited=None):\n    \"\"\"\n    Recursively traverses a mock dependency chain of projects.\n    Stops if a project has been visited already or recursion exceeds 10 levels.\n    This simulates advanced recursive logic like tree-walks or dependency graphs.\n    \"\"\"\n    if visited is None:\n        visited = set()\n    if project_id in visited or depth > 10: #base case\n        return []",
         "detail": "functions",
         "documentation": {}
     },

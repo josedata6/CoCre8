@@ -15,7 +15,7 @@ def findProjectChain(project_id, depth=0, visited=None):
     """
     if visited is None:
         visited = set()
-    if project_id in visited or depth > 10:
+    if project_id in visited or depth > 10: #base case
         return []
     visited.add(project_id)
     return [project_id] + findProjectChain(project_id + 1, depth + 1, visited)
