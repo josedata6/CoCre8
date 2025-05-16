@@ -394,7 +394,7 @@
         "kind": 2,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "def main():\n    initDb()  # Initialize database and tables (if not already created)\n    print(\"Welcome to Co-Cre8!\")\n    # Application loop: keeps running until the user chooses to exit\n    while True:\n        menu()\n        choice = input(\"Choose an option: \").strip()\n        # 1. List users whose name or bio matches a keyword\n        if choice == \"1\":\n            kw = input(\"Enter a keyword: \")",
+        "peekOfCode": "def main():\n    initDb()  # Initialize database and tables (if not already created)\n    print(\"Welcome to Co-Cre8!\")\n    # Application loop: keeps running until the user chooses to exit\n    while True:\n        menu()\n        choice = input(\"Choose an option: \").strip() # Get user input for menu choice\n        # 1. List users whose name or bio matches a keyword\n        if choice == \"1\":\n            kw = input(\"Enter a keyword: \")",
         "detail": "main",
         "documentation": {}
     }
