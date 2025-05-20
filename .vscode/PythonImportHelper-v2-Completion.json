@@ -331,7 +331,7 @@
         "kind": 2,
         "importPath": "functions",
         "description": "functions",
-        "peekOfCode": "def quickSort(arr):\n    \"\"\"Recursively sorts a list using quick sort algorithm.\"\"\"\n    if len(arr) <= 1:\n        return arr\n    pivot = arr[0]\n    lesser = quickSort([x for x in arr[1:] if x < pivot])\n    greater = quickSort([x for x in arr[1:] if x >= pivot])\n    return lesser + [pivot] + greater\n# Get sorted project titles alphabetically\ndef getAllProjectTitlesSorted():",
+        "peekOfCode": "def quickSort(arr):\n    \"\"\"Recursively sorts a list using quick sort algorithm.\"\"\"\n    if len(arr) <= 1:\n        return arr\n    pivot = arr[0] # Choose the first element as pivot\n    lesser = quickSort([x for x in arr[1:] if x < pivot]) # elements less than pivot\n    greater = quickSort([x for x in arr[1:] if x >= pivot]) # elements greater than or equal to pivot\n    return lesser + [pivot] + greater\n# Get sorted project titles alphabetically\ndef getAllProjectTitlesSorted():",
         "detail": "functions",
         "documentation": {}
     },
@@ -367,7 +367,7 @@
         "kind": 2,
         "importPath": "functions",
         "description": "functions",
-        "peekOfCode": "def getTopContributors():\n    \"\"\"Returns a list of user_ids for those who joined the most projects.\"\"\"\n    count = {}\n    for m in Membership().listAll():\n        uid = m[0]  # user_id\n        count[uid] = count.get(uid, 0) + 1\n    max_contrib = max(count.values(), default=0)\n    return [uid for uid, c in count.items() if c == max_contrib]\n# Search for projects with a matching keyword in the title\ndef findProjectByTitle(keyword):",
+        "peekOfCode": "def getTopContributors():\n    \"\"\"Returns a list of user_ids for those who joined the most projects.\"\"\"\n    count = {}\n    for m in Membership().listAll():\n        uid = m[0]  # user_id\n        count[uid] = count.get(uid, 0) + 1\n    max_contrib = max(count.values(), default=0)\n    return [uid for uid, c in count.items() if c == max_contrib] # list of user_ids with max contributions\n# Search for projects with a matching keyword in the title\ndef findProjectByTitle(keyword):",
         "detail": "functions",
         "documentation": {}
     },

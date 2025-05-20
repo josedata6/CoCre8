@@ -59,9 +59,9 @@ def quickSort(arr):
     """Recursively sorts a list using quick sort algorithm."""
     if len(arr) <= 1:
         return arr
-    pivot = arr[0]
-    lesser = quickSort([x for x in arr[1:] if x < pivot])
-    greater = quickSort([x for x in arr[1:] if x >= pivot])
+    pivot = arr[0] # Choose the first element as pivot
+    lesser = quickSort([x for x in arr[1:] if x < pivot]) # elements less than pivot
+    greater = quickSort([x for x in arr[1:] if x >= pivot]) # elements greater than or equal to pivot
     return lesser + [pivot] + greater
 
 # Get sorted project titles alphabetically
@@ -92,7 +92,7 @@ def getTopContributors():
         uid = m[0]  # user_id
         count[uid] = count.get(uid, 0) + 1
     max_contrib = max(count.values(), default=0)
-    return [uid for uid, c in count.items() if c == max_contrib]
+    return [uid for uid, c in count.items() if c == max_contrib] # list of user_ids with max contributions
 
 # Search for projects with a matching keyword in the title
 def findProjectByTitle(keyword):

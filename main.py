@@ -7,7 +7,9 @@ from models.project import Project
 from models.membership import Membership
 from models.message import Message
 
-# Import controller functions that combine model logic with search/sort/analysis
+# imports specific functions from functions.py 
+# file so you can use them in script
+# without importing everything from the file.
 from functions import (
     listUsersByKeyword, listProjectsBySkill, getAllProjectTitlesSorted,
     getMessagesForProject, countProjectsPerUser, getTopContributors,
@@ -43,7 +45,7 @@ def main():
         # 1. List users whose name or bio matches a keyword
         if choice == "1":
             kw = input("Enter a keyword: ")
-            for u in listUsersByKeyword(kw):
+            for u in listUsersByKeyword(kw): # List users that match the keyword
                 print(u)
 
         # 2. List projects that are tagged with a specific skill
@@ -73,15 +75,15 @@ def main():
         # 7. Search for projects with a keyword in their title
         elif choice == "7":
             kw = input("Enter title keyword: ")
-            for p in findProjectByTitle(kw):
+            for p in findProjectByTitle(kw): # Find projects by title
                 print(p)
 
         # 8. Create a new project and assign the current user as creator
         elif choice == "8":
-            user_id = int(input("Enter your user ID: "))
+            user_id = int(input("Enter your user ID: ")) # Get user ID
             title = input("Enter project title: ")
             desc = input("Enter description: ")
-            Project().create(title, desc, user_id)
+            Project().create(title, desc, user_id) # Create a new project
             print("Project created.")
 
         # 9. Join a project with a specific role and today's date
